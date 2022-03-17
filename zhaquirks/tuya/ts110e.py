@@ -54,9 +54,9 @@ class F000LevelControlCluster(LevelControl):
 
     manufacturer_attributes = {
         TUYA_LEVEL_ATTRIBUTE: ("manufacturer_current_level", t.uint16_t),
-        TUYA_BULB_TYPE_ATTRIBUTE: ("bulb_type", TuyaBulbType), # 0xFC02
-        TUYA_MIN_LEVEL_ATTRIBUTE: ("manufacturer_min_level", t.uint16_t), # 0xFC03
-        TUYA_MAX_LEVEL_ATTRIBUTE: ("manufacturer_max_level", t.uint16_t), # 0xFC04
+        TUYA_BULB_TYPE_ATTRIBUTE: ("bulb_type", TuyaBulbType),  # 0xFC02
+        TUYA_MIN_LEVEL_ATTRIBUTE: ("manufacturer_min_level", t.uint16_t),  # 0xFC03
+        TUYA_MAX_LEVEL_ATTRIBUTE: ("manufacturer_max_level", t.uint16_t),  # 0xFC04
     }
 
     manufacturer_server_commands = {
@@ -109,7 +109,7 @@ class F000LevelControlCluster(LevelControl):
 
 
 class DimmerSwitchWithNeutral1Gang(TuyaDimmerSwitch):
-    """Tuya Dimmer Switch Module With Neutral 1 Gang"""
+    """Tuya Dimmer Switch Module With Neutral 1 Gang."""
 
     signature = {
         MODELS_INFO: [("_TZ3210_ngqk6jia", "TS110E")],
@@ -126,7 +126,7 @@ class DimmerSwitchWithNeutral1Gang(TuyaDimmerSwitch):
                     Scenes.cluster_id,
                     OnOff.cluster_id,
                     LevelControl.cluster_id,
-                    TuyaZBExternalSwitchTypeCluster,
+                    TuyaZBExternalSwitchTypeCluster.cluster_id,
                 ],
                 OUTPUT_CLUSTERS: [Time.cluster_id, Ota.cluster_id],
             },
